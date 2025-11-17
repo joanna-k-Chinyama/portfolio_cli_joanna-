@@ -19,7 +19,13 @@ int main(){
     cout<<"5. exict\n";
     cout<<"enter your choice\n";
     cin>>choice;
-   
+    
+    if (!cin) {               
+    cin.clear();               
+    cin.ignore(1000, '\n');     
+    cout << "Invalid input! Please enter a valid option NUMBER.\n";
+    continue; }     
+    
     if(choice == 1){
         aboutMe();
     }else if (choice == 2)
@@ -84,4 +90,5 @@ void futurePlans(){
 void exist(){
     cin.clear();
     cout<<"you have exited";
+
 }
